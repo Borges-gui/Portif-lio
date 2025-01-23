@@ -1,7 +1,5 @@
 # Meu Site Pessoal 🌐
 
-(img/image.png)
-
 Este é meu site pessoal, onde apresento meus projetos, experiências e um pouco mais sobre mim! 🎉
 
 ## Tecnologias Utilizadas
