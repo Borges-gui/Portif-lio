@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Definindo a codificação de caracteres para UTF-8 -->
+    <meta charset="UTF-8">
+    
+    <!-- Tornando o site responsivo para dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título da página que aparece na aba do navegador -->
+    <title>Meu Portfólio</title>
+    
+    <!-- Link para a fonte externa "Roboto" -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Link para o arquivo CSS externo para estilização -->
+    <link rel="stylesheet" href="css/Style.css">
+
+    <!-- Fonte adicional do Google Fonts (mesma fonte "Roboto") -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+</head>
+<body>
+  <!-- Cabeçalho da página -->
+  <header id="header">
+    <div class="wrapper">
+        <!-- Nome do autor/link para a home -->
+        <a class="meunome" href="#hero">Borges</a>
+        
+        <!-- Menu de navegação -->
+        <nav class="menu">
+            <ul>
+                <!-- Links de navegação para as seções da página -->
+                <li><a id="aboutNav" class="close" href="#sobre">Sobre mim</a></li>
+                <li><a id="knowledgeNav" class="close" href="#ferramentas">Conhecimentos</a></li>
+                <li><a id="projectsNav" class="close" href="#projetos">Projetos</a></li>
+                <li><a id="contactNav" class="close" href="#contato">Fale comigo</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Links para redes sociais -->
+        <ul class="social-links">
+            <!-- Link para Instagram -->
+            <li>
+                <a href="https://www.instagram.com/borges_guilhermee/" title="Instagram" target="_blank">
+                    <!-- Ícone do Instagram -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 1.99997H7C4.23858 1.99997 2 4.23855 2 6.99997V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V6.99997C22 4.23855 19.7614 1.99997 17 1.99997Z" stroke="hsl(270, 100%, 60%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M15.9997 11.3701C16.1231 12.2023 15.981 13.0523 15.5935 13.7991C15.206 14.5459 14.5929 15.1515 13.8413 15.5297C13.0898 15.908 12.2382 16.0397 11.4075 15.906C10.5768 15.7723 9.80947 15.3801 9.21455 14.7852C8.61962 14.1903 8.22744 13.4229 8.09377 12.5923C7.96011 11.7616 8.09177 10.91 8.47003 10.1584C8.84829 9.40691 9.45389 8.7938 10.2007 8.4063C10.9475 8.0188 11.7975 7.87665 12.6297 8.00006C13.4786 8.12594 14.2646 8.52152 14.8714 9.12836C15.4782 9.73521 15.8738 10.5211 15.9997 11.3701Z" stroke="hsl(270, 100%, 60%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17.5 6.49997H17.51" stroke="hsl(270, 100%, 60%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </li>
+            <!-- Link para GitHub -->
+            <li>
+                <a href="https://github.com/Borges-gui" title="Github" target="_blank">
+                    <!-- Ícone do GitHub -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="none" d="M0 0h24v24H0z" />
+                        <path d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z" fill="hsl(270, 100%, 50%)"/>
+                    </svg>
+                </a>
+            </li>
+            <!-- Link para LinkedIn -->
+            <li>
+                <a
+                  href="https://www.linkedin.com/in/guilherme-borges-jacinto-264700300/"
+                  title="LinkedIn"
+                  target="_blank"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path
+                      d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"
+                      fill="hsl(270, 100%, 50%)"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <!-- Link para Twitter -->
+              <li>
+                <a
+                  href="https://x.com/Guisss8?t=OhLKDgId4BszC14VAzlYig&s=08"
+                  title="Twitter"
+                  target="_blank"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path
+                      d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z"
+                      fill="hsl(270, 100%, 50%)"
+                    />
+                  </svg>
+                </a>
+              </li>
+        </ul>
+    </div>
+</header>
+
+<!-- Seção "Hero" do portfólio -->
+<section id="hero">
+    <div class="hero-content">
+        <h3 class="helloworld">  Hello World 🍵</h3>
+        <h1 class="hero-title">Olá, eu sou Guilherme</h1>
+        <p class="hero-subtitle">Desenvolvedor Front-End apaixonado por criar interfaces modernas e funcionais.</p>
+        <a href="#projetos" class="hero-button">Ver Meus Projetos</a>
+    </div>
+    <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+</section>
+
+<!-- Seção "Sobre" do portfólio -->
+<section id="sobre">
+  <div class="imagemdiv">
+    <img src="img/20241207_114427.jpg" alt="Foto do Guilherme Borges">
+    <div class="textos">
+      <div class="sobre-mim">
+        <h2>Sobre mim</h2>
+        <p>Olá, meu nome é Guilherme Borges, tenho 18 anos e sou estudante de Ciência da Computação na EEP Fumep em Piracicaba. Atualmente, estou no 3º semestre do meu segundo ano de graduação, e estou empolgado com o que está por vir na minha jornada acadêmica.</p>
+        <p>Além dos estudos, trabalho na área de TI Infraestrutura em uma fábrica de baterias, onde tenho a oportunidade de aplicar e expandir meus conhecimentos técnicos em um ambiente profissional.</p>
+        <p>Em 2025, estou dando meus primeiros passos como freelancer no mundo do desenvolvimento web. Embora minha principal área de atuação no momento seja front-end, meu objetivo a longo prazo é me tornar um desenvolvedor fullstack, ampliando meu conhecimento e habilidades em diversas tecnologias de desenvolvimento. Estou sempre em busca de novos desafios e oportunidades para crescer profissionalmente e aprimorar minhas habilidades.</p>
+      </div>
+      <div class="faco">
+        <h2>O que eu faço</h2>
+        <p>Eu sou desenvolvedor web front-end, e meu trabalho é basicamente transformar ideias e designs em interfaces que as pessoas usam no dia a dia. Uso tecnologias como HTML, CSS e JavaScript para criar sites e aplicativos que sejam bonitos, funcionais e que funcionem bem em qualquer dispositivo.</p>
+        <p>O que eu mais gosto nessa área é que ela mistura criatividade com tecnologia. Eu consigo construir algo que as pessoas realmente interagem e que pode facilitar a vida delas de alguma forma. Além disso, é uma área que está sempre mudando, então estou sempre aprendendo coisas novas, testando ferramentas e acompanhando tendências.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Seção "Projetos" do portfólio -->
+ <section id="ferramentas">
+
+  <h2>Conhecimento</h2>
+
+ <div class="containerlinguas">
+  <div>
+    <img src="img/css.png" alt="">
+    <h3>CSS</h3>
+    <p>CSS é a linguagem usada para estilizar páginas web. Ela permite controlar cores, fontes, espaçamento e layout, tornando os sites visualmente atraentes e responsivos.</p>
+  </div>
+  <div>
+    <img src="img/html.png" alt="">
+    <h3>HTML</h3>
+    <p>HTML é a base de toda página web. Ele define a estrutura do conteúdo, como cabeçalhos, parágrafos, links e imagens, permitindo a organização e exibição de informações na internet.</p></div>
+  <div>
+    <img src="img/js.png" alt="">
+    <h3>JS</h3>
+    <p>JavaScript é uma linguagem de programação dinâmica usada para adicionar interatividade às páginas web, como animações, validações de formulário e atualizações de conteúdo sem recarregar a página.</p>
+  </div>
+  <div>
+    <img src="img/php.png" alt="">
+    <h3>PHP</h3>
+    <p>PHP é uma linguagem de script do lado do servidor projetada para o desenvolvimento web. Ela permite criar aplicações dinâmicas e interativas, como sistemas de login, blogs e e-commerces.</p>
+  </div>
+  <div>
+    <img src="img/mysql.png" alt="">
+    <h3>MYSQL</h3>
+    <p>MySQL é um sistema de gerenciamento de banco de dados relacional, ideal para armazenar e organizar grandes volumes de dados. É amplamente usado em aplicações web para lidar com informações.</p>
+  </div>
+  <div>
+    <img src="img/powerbi.webp" alt="">
+    <h3>Power Bi</h3>
+    <p>Power BI é uma ferramenta de análise de dados da Microsoft. Ela transforma dados em relatórios visuais interativos, ajudando empresas a tomar decisões informadas com base em insights detalhados.</p>
+  </div>
+</div>
+
+</section>
+
+<section id="projetos">
+  <h4>Projetos</h4>
+
+  <div class="slider-container">
+    <!-- Botão "Prev" -->
+    <button class="nav-btn" id="btnPrev">&#10094;</button>
+
+    <!-- Contenedor das Tarjetas -->
+    <div class="slider-track" id="sliderTrack">
+      <!-- Card 1 -->
+      <div class="card" data-tilt data-tilt-max="15" data-tilt-speed="600">
+        <img src="img/Portifolio-card 1.png" alt="Imagem 1" />
+        <h2>Portifólio</h2>
+        <p>Portifólio profissional.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card" data-tilt data-tilt-max="15" data-tilt-speed="600">
+        <img src="img/Card 2.webp" alt="Imagem 2" />
+        <h2>EM BREVE MAIS PROJETOS</h2>
+        <p>.</p>
+      </div>
+    </div>
+
+    <!-- Botão "Next" -->
+    <button class="nav-btn" id="btnNext">&#10095;</button>
+  </div>
+</section>
+
+
+<!-- Seção "Contato" com e-mail -->
+<section id="contato">
+  <h2>Fale comigo!</h2>
+
+
+  <div class="macbook">
+    <div class="inner">
+      <div class="screen">
+        <div class="face-one">
+          <div class="camera"></div>
+          <div class="display">
+            <div class="shade"></div>
+          </div>
+          <span>MacBook Air</span>
+        </div>
+        <img src="http://www.clker.com/cliparts/i/s/H/f/4/T/apple-logo-white.svg" class="logo" />
+      </div>
+      <div class="body">
+        <div class="face-one">
+          <div class="touchpad">
+          </div>
+          <div class="keyboard">
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key space"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key f"></div>
+            <div class="key f"></div>
+            <div class="key f"></div>
+            <div class="key f"></div>
+            <div class="key f"></div>
+            <div class="key f"></div>
+            <div class="key f"></div>
+            <div class="key f"></div>
+            <div class="key f"></div>
+            <div class="key f"></div>
+            <div class="key f"></div>
+            <div class="key f"></div>
+            <div class="key f"></div>
+            <div class="key f"></div>
+            <div class="key f"></div>
+            <div class="key f"></div>
+          </div>
+        </div>
+        <div class="pad one"></div>
+        <div class="pad two"></div>
+        <div class="pad three"></div>
+        <div class="pad four"></div>
+      </div>
+    </div>
+    <div class="shadow"></div>
+  </div>
+  
+  <div class="meucontato">
+    <!-- Linha do WhatsApp -->
+    <div class="whatsapp-contact">
+      <a href="https://wa.me/5519999330406" target="_blank" class="whatsapp-link" title="Fale conosco pelo WhatsApp!">
+        <img src="https://img.icons8.com/color/48/whatsapp.png" alt="WhatsApp">
+      </a>
+      <p>55 (19) 99933-0406</p>
+    </div>
+
+    <!-- Linha do E-mail -->
+    <div class="email-contact">
+      <a href="mailto:g.borgesjacinto@gmail.com" class="email-link" title="Entre em contato por e-mail!">
+        <img src="https://img.icons8.com/fluency/48/new-post.png" alt="E-mail">
+      </a>
+      <p>g.borgesjacinto@gmail.com</p>
+    </div>
+  </div>
+</section>
+
+<!-- Rodapé com informações de copyright -->
+<footer class="footer">
+  <div class="footer-left">
+    <h2>Borges</h2>
+    <p>&copy; 2025 Borges.</p>
+    <p>Todos os direitos reservados.</p>
+  </div>
+<div class="links-sociais">
+    <ul>
+      <!-- Link para Instagram -->
+      <li>
+          <a href="https://www.instagram.com/borges_guilhermee/" title="Instagram" target="_blank">
+              <!-- Ícone do Instagram -->
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 1.99997H7C4.23858 1.99997 2 4.23855 2 6.99997V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V6.99997C22 4.23855 19.7614 1.99997 17 1.99997Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M15.9997 11.3701C16.1231 12.2023 15.981 13.0523 15.5935 13.7991C15.206 14.5459 14.5929 15.1515 13.8413 15.5297C13.0898 15.908 12.2382 16.0397 11.4075 15.906C10.5768 15.7723 9.80947 15.3801 9.21455 14.7852C8.61962 14.1903 8.22744 13.4229 8.09377 12.5923C7.96011 11.7616 8.09177 10.91 8.47003 10.1584C8.84829 9.40691 9.45389 8.7938 10.2007 8.4063C10.9475 8.0188 11.7975 7.87665 12.6297 8.00006C13.4786 8.12594 14.2646 8.52152 14.8714 9.12836C15.4782 9.73521 15.8738 10.5211 15.9997 11.3701Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17.5 6.49997H17.51" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+          </a>
+      </li>
+      <!-- Link para GitHub -->
+      <li>
+          <a href="https://github.com/Borges-gui" title="Github" target="_blank">
+              <!-- Ícone do GitHub -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z" fill="#fff"/>
+              </svg>
+          </a>
+      </li>
+      <!-- Link para LinkedIn -->
+      <li>
+          <a
+            href="https://www.linkedin.com/in/guilherme-borges-jacinto-264700300/"
+            title="LinkedIn"
+            target="_blank"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="40"
+              height="40"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"
+                fill="#fff"
+              />
+            </svg>
+          </a>
+        </li>
+        <!-- Link para Twitter -->
+        <li>
+          <a
+            href="https://x.com/Guisss8?t=OhLKDgId4BszC14VAzlYig&s=08"
+            title="Twitter"
+            target="_blank"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="40"
+              height="40"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z"
+                fill="#fff"
+              />
+            </svg>
+          </a>
+        </li>
+  </ul>
+  </div>
+</footer>
+
+<!-- Script de interação (não fornecido no código) -->
+<script src="JS/Interação.js"></script>
+
+</body>
+</html>

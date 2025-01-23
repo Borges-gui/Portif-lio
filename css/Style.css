@@ -1,0 +1,1172 @@
+/* Importando a fonte "Roboto" do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Define a animação para os elementos */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px); /* Começa mais abaixo */
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0); /* Retorna à posição original */
+  }
+}
+
+/* Aplica a animação para todos os elementos dentro de uma seção */
+section {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards; /* 1s de duração, com efeito suave */
+  animation-delay: 0.3s; /* Ajuste para delay, se necessário */
+}
+
+/* Caso queira um delay diferente para cada item dentro da seção */
+section > * {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+section > *:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+section > *:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+section > *:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+/* Seção e elementos com fundo sólido */
+body, section {
+  background-color: #000000; /* Exemplo de fundo preto */
+  color: white; /* Texto branco */
+}
+
+/* Outros ajustes de estilo para garantir que o fundo não mude */
+section {
+  background-color: inherit; /* O fundo da seção herda do body, ou você pode definir uma cor personalizada */
+}
+
+
+/* Resetando margens, preenchimentos e definindo box-sizing para todos os elementos */
+* {
+    margin: 0; /* Remove as margens padrão */
+    padding: 0; /* Remove o preenchimento padrão */
+    border: 0px;
+    box-sizing: border-box; /* Faz com que o padding e a borda sejam incluídos nas dimensões do elemento */
+}
+
+html, body{
+    min-height: 100%;
+}
+
+/* Comportamento suave de rolagem quando o usuário navegar para uma seção */
+html {
+  scroll-behavior: smooth; /* Ativa a rolagem suave nas navegações internas */
+  overflow-x: hidden; /* Impede a rolagem horizontal */
+}
+
+/* Compensa a altura do cabeçalho fixo, aplicando um padding superior ao corpo */
+body {
+    padding-top: 80px; /* Altura do cabeçalho fixo */
+    font-family: 'Roboto', sans-serif; /* Define a fonte padrão como Roboto */
+    overflow-x: hidden; /* Garante que nenhum elemento cause overflow horizontal */
+    justify-content: center; /* Alinha horizontalmente */
+    align-items: center;
+}
+
+/* Wrapper para garantir a disposição dos elementos */
+.wrapper {
+    display: flex; /* Define o layout flexível */
+    justify-content: space-between; /* Espaça os itens igualmente */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    width: 100%; /* Define a largura do container para 100% */
+}
+
+/* Estilo para o cabeçalho */
+header {
+    background-color: #000000; /* Cor de fundo preta */
+    display: flex; /* Layout flexível para o cabeçalho */
+    justify-content: space-between; /* Espaça os itens igualmente */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    position: fixed; /* Fixação do cabeçalho na parte superior da página */
+    width: 100%; /* Largura 100% da tela */
+    top: 0; /* Posiciona no topo */
+    z-index: 10; /* Garante que o cabeçalho ficará acima de outros elementos */
+    height: 90px; /* Altura do cabeçalho */
+    padding: 0 20px; /* Padding de 20px nas laterais */
+    transition: background-color 0.3s, backdrop-filter 0.3s; /* Transição suave para mudanças no fundo e filtro */
+}
+
+/* Efeito de borrão para o cabeçalho */
+.borrado {
+    backdrop-filter: blur(10px); /* Aplica um efeito de desfoque no fundo */
+    background-color: rgba(0, 0, 0, 0.8); /* Cor de fundo com transparência */
+}
+
+/* Estilo do nome do usuário (ou logo) */
+.meunome {
+    font-size: 35px; /* Define o tamanho da fonte */
+    --neon-purple-hover: hsl(270, 100%, 50%); /* Variável para a cor roxa */
+    text-decoration: none; /* Remove o sublinhado do texto */
+    font-weight: 100; /* Peso da fonte leve */
+    display: flex; /* Layout flexível para o nome */
+    position: relative; /* Posiciona o nome relativo ao seu container */
+    align-items: center; /* Alinha verticalmente o nome */
+    margin-left: 40px; /* Ajusta a posição para evitar deslocamento excessivo */
+    left: 50px;
+}
+.meunome:active {
+  color: rgb(88, 11, 119); /* Cor ao clicar */
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Estilo dos itens de lista */
+  .menu li {
+    margin: 0 20px;
+    position: relative;
+    align-items: center;
+  }
+
+  /* Estilo dos links do menu */
+  .menu a {
+    color: hsl(270, 100%, 50%);
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    display: block;
+    padding: 10px;
+  }
+
+  /* Linha animada abaixo de cada link */
+  .menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: hsl(270, 100%, 50%);
+    transition: width 0.3s ease;
+  }
+
+  /* Quando o mouse passa sobre o link */
+  .menu a:hover::after {
+    width: 100%;
+  }
+
+/* Estilo para o menu de navegação */
+nav ul {
+    list-style: none; /* Remove os pontos das listas */
+    display: flex; /* Layout flexível para o menu */
+    justify-content: center; /* Alinha os itens centralizados */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    gap: 20px; /* Espaçamento de 20px entre os itens */
+    flex-grow: 1; /* Faz com que a lista cresça para ocupar o espaço disponível */
+    text-align: center; /* Alinha o texto centralizado */
+}
+
+/* Estilo para os links no menu de navegação */
+nav ul li a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    --neon-purple: hsl(270, 100%, 50%); /* Cor roxa para os links */
+    font-size: 22px; /* Tamanho da fonte */
+    font-weight: 100; /* Peso da fonte leve */
+}
+
+/* Estilo para o link ativo no menu de navegação */
+nav ul li a.active {
+    color: hsl(270, 100%, 50%); /* Cor roxa para o link ativo */
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+
+/* Estilo para os links sociais (geralmente ícones) */
+ul.social-links {
+    list-style: none; /* Remove os pontos das listas */
+    display: flex; /* Layout flexível para os links sociais */
+    justify-content: flex-end; /* Alinha os links para a direita */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    gap: 15px; /* Espaçamento de 15px entre os ícones */
+    margin-right: 20px; /* Ajusta a posição para evitar overflow */
+    position: relative;
+    right: 50px;
+}
+
+/* Estilo geral das seções */
+section {
+    padding: 100px 20px; /* Padding de 100px no topo e 20px nas laterais */
+    margin: 0 auto; /* Centraliza a seção */
+    max-width: 100%; /* Define uma largura máxima */
+    font-weight: 100; /* Peso da fonte leve */
+}
+
+/* Estilo para a seção Hero */
+section#hero {
+    background-color: #000000; /* Cor de fundo preta */
+    height: 700px; /* Altura de 1000px */
+    position: relative; /* Posicionamento relativo para os elementos dentro da seção */
+    text-align: center;
+}
+
+/* Conteúdo da seção Hero */
+.hero-content {
+    position: absolute; /* Posiciona o conteúdo absolutamente dentro da seção */
+    top: 120px; /* Distância do topo */
+    left: 20px; /* Ajusta a posição para evitar deslocamento excessivo */
+    width: calc(100% - 40px); /* Garante que o conteúdo respeite os limites do viewport */
+    font-family: 'Roboto', sans-serif; /* Fonte Roboto */
+}
+
+/* Estilização do contêiner */
+/* Estilização do contêiner */
+.helloworld {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    font-weight: 100;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block; /* Para controlar melhor o alinhamento */
+    position: relative; /* Para ajustar o cursor facilmente */
+    color: hsl(270, 100%, 50%);
+  }
+
+  /* Cursor ajustável */
+  .helloworld::after {
+    content: ''; /* Adiciona o cursor */
+    position: absolute;
+    right: 2px; /* Ajuste horizontal */
+    top: 0; /* Ajuste vertical */
+    width: 2px; /* Espessura do cursor */
+    height: 100%; /* Altura do cursor, segue o texto */
+    background-color: hsl(270, 100%, 50%);; /* Cor do cursor */
+    animation: blink-cursor 0.6s step-end infinite; /* Animação do cursor */
+  }
+
+  /* Animação do texto */
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  /* Animação do cursor */
+  @keyframes blink-cursor {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  /* Aplica a animação ao texto */
+  .typewriter-container span {
+    display: inline-block;
+    animation: typewriter 4s steps(30, end) forwards;
+  }
+
+/* Estilo para o título principal */
+.hero-title {
+    font-size: 3.5rem; /* Tamanho da fonte 3.5rem */
+    margin: 10px 10px; /* Margem de 10px */
+    font-weight: 100; /* Peso da fonte leve */
+    color: #fff; /* Cor branca */
+    position: relative; /* Posiciona o título relativamente */
+    left: 0; /* Remove deslocamento excessivo */
+}
+
+/* Estilo para o subtítulo da seção Hero */
+.hero-subtitle {
+    font-size: 1.25rem; /* Tamanho de fonte 1.25rem */
+    margin-bottom: 30px; /* Margem inferior de 30px */
+    color: #fff; /* Cor branca */
+}
+
+/* Estilo para o botão da seção Hero */
+.hero-button {
+    background-color: hsl(0, 0%, 0%); /* Cor de fundo preta */
+    color: hsl(270, 100%, 50%); /* Cor roxa */
+    padding: 10px 20px; /* Padding de 10px em cima e embaixo, 20px nas laterais */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-weight: bold; /* Deixa a fonte em negrito */
+    border: 2px solid hsl(270, 100%, 50%); /* Borda roxa */
+    position: relative;
+    left: -10px;
+}
+   
+/* Efeito para o botão quando o usuário passar o mouse sobre ele */
+.hero-button:hover {
+    background-color: hsl(270, 100%, 50%); /* Fundo roxo ao passar o mouse */
+    color: #fff; /* Cor do texto branca */
+}
+
+.loader {
+    position: relative;
+    top: 55%;
+    bottom: 0px;
+    left: -9px;
+    margin: auto;
+    width: 175px;
+    height: 100px;
+  }
+  
+  .loader span {
+    display: block;
+    background: hsl(270, 100%, 50%);
+    width: 7px;
+    height: 10%;
+    border-radius: 14px;
+    margin-right: 5px;
+    float: left;
+    margin-top: 25%;
+  }
+  
+  .loader span:last-child {
+    margin-right: 0px;
+  }
+  
+  .loader span:nth-child(1) {
+    animation: load 2.5s 1.4s infinite linear;
+  }
+  
+  .loader span:nth-child(2) {
+    animation: load 2.5s 1.2s infinite linear;
+  }
+  
+  .loader span:nth-child(3) {
+    animation: load 2.5s 1s infinite linear;
+  }
+  
+  .loader span:nth-child(4) {
+    animation: load 2.5s 0.8s infinite linear;
+  }
+  
+  .loader span:nth-child(5) {
+    animation: load 2.5s 0.6s infinite linear;
+  }
+  
+  .loader span:nth-child(6) {
+    animation: load 2.5s 0.4s infinite linear;
+  }
+  
+  .loader span:nth-child(7) {
+    animation: load 2.5s 0.2s infinite linear;
+  }
+  
+  .loader span:nth-child(8) {
+    animation: load 2.5s 0s infinite linear;
+  }
+  
+  .loader span:nth-child(9) {
+    animation: load 2.5s 0.2s infinite linear;
+  }
+  
+  .loader span:nth-child(10) {
+    animation: load 2.5s 0.4s infinite linear;
+  }
+  
+  .loader span:nth-child(11) {
+    animation: load 2.5s 0.6s infinite linear;
+  }
+  
+  .loader span:nth-child(12) {
+    animation: load 2.5s 0.8s infinite linear;
+  }
+  
+  .loader span:nth-child(13) {
+    animation: load 2.5s 1s infinite linear;
+  }
+  
+  .loader span:nth-child(14) {
+    animation: load 2.5s 1.2s infinite linear;
+  }
+  
+  .loader span:nth-child(15) {
+    animation: load 2.5s 1.4s infinite linear;
+  }
+  
+  @keyframes load {
+    0% {
+      background: hsl(270, 100%, 50%);
+      margin-top: 25%;
+      height: 10%;
+    }
+    50% {
+      background: #444;
+      height: 100%;
+      margin-top: 0%;
+    }
+    100% {
+      background: h;
+      height: 10%;
+      margin-top: 25%;
+    }
+  }
+
+/* Estilo para a seção "Sobre" */
+section#sobre {
+  background-color: #060606;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+}
+
+.imagemdiv {
+  display: flex;
+  gap: 40px; /* Espaçamento entre a imagem e os textos */
+  max-width: 1200px;
+  align-items: flex-start; /* Alinha os elementos ao topo */
+}
+
+.imagemdiv img {
+  width: 400px;
+  height: auto;
+  border-radius: 10%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.textos {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Espaçamento entre os blocos "Sobre mim" e "O que eu faço" */
+}
+
+.textos > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espaçamento interno entre o título e os parágrafos */
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  color: hsl(270, 100%, 50%);
+  font-size: 36px;
+}
+
+p {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+section#ferramentas {
+  background-color: #000000; /* Cor de fundo escura */
+  height: 1200px; /* Altura de 900px */
+  display: flex; /* Usar Flexbox para o layout */
+  justify-content: center; /* Alinha o conteúdo horizontalmente */
+  align-items: center; /* Alinha o conteúdo verticalmente */
+  position: relative;
+}
+
+
+.containerlinguas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 90px;
+}
+
+section#ferramentas h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 3rem;
+  color: hsl(270, 100%, 50%);
+  margin-top: 70px;
+  text-align: center;
+  position: absolute;
+  top: 20px;
+}
+
+
+.containerlinguas h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  color: hsl(270, 100%, 50%);
+  font-size: 28px; /* Tamanho menor para o título dentro da box */
+  margin: 10px 0; /* Espaçamento entre o título e os outros elementos */
+}
+
+.containerlinguas p {
+  color: #fff; /* Cor do texto */
+  font-size: 14px; /* Tamanho do texto menor para caber na box */
+  line-height: 1.5; /* Espaçamento entre as linhas */
+  text-align: center; /* Centraliza o texto */
+  margin: 0 10px; /* Espaço interno para o texto */
+}
+
+.containerlinguas img {
+  width: auto;
+  height: 150px; /* Ajusta altura da logo */
+  max-width: 100px; /* Limita a largura a 90% da box */
+  margin-bottom: 10px; /* Espaçamento entre a imagem e o título */
+}
+
+.containerlinguas div {
+  width: 270px;
+  height: 350px;
+  background-color: #121212;
+  display: flex;
+  flex-direction: column; /* Alinha os elementos verticalmente */
+  justify-content: start; /* Começa do topo */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  border-radius: 10px;
+  padding: 20px; /* Adiciona espaçamento interno */
+}
+
+
+
+/* Estilo para a seção "Projetos" */
+section#projetos {
+  background-color: #060606;
+  height: 900px; /* Altura de 700px */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-container {
+  position: relative; /* Os botões serão posicionados em relação a este container */
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden; /* Oculta conteúdo que sai do container */
+}
+
+/* -----------------------
+  SLIDER TRACK
+------------------------ */
+.slider-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+/* -----------------------
+  CARD
+------------------------ */
+
+section#projetos{
+  flex-direction: column; /* Alinha elementos verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  background-color: #060606;
+}
+
+.card {
+  min-width: 300px;
+  margin: 0 1rem; /* espacio lateral entre tarjetas */
+  background: #121212;
+  border-radius: 10px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 1rem;
+  text-align: center;
+  /* La propiedad transform la maneja VanillaTilt.js */
+}
+
+section#projetos h4 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 3rem;
+  color: hsl(270, 100%, 50%);
+  margin-top: 70px;
+  text-align: center;
+  position: relative;
+  top: -20p;
+}
+
+/* Imagen dentro de la tarjeta */
+.card img {
+  width: 500px; /* Tamanho da imagem */
+  height: 282px;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.card h2{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  color: hsl(270, 100%, 50%);
+  font-size: 28px; /* Tamanho menor para o título dentro da box */
+  margin: 10px 0; /* Espaçamento entre o título e os outros elementos */
+}
+
+.card p {
+  color: #fff; /* Cor do texto */
+  font-size: 14px; /* Tamanho do texto menor para caber na box */
+  line-height: 1.5; /* Espaçamento entre as linhas */
+  text-align: center; /* Centraliza o texto */
+  margin: 0 10px; /* Espaço interno para o texto */
+}
+
+/* NAV BUTTONS (Prev, Next) */
+.nav-btn {
+  position: absolute; /* Posiciona os botões de forma independente do conteúdo interno */
+  top: 50%; /* Centraliza verticalmente dentro do slider */
+  transform: translateY(-50%);
+  font-size: 2rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  color: hsl(270, 100%, 50%);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  z-index: 10; /* Certifica-se de que os botões estão acima dos cards/imagens */
+  transition: background 0.3s;
+}
+/* Hover en botones */
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Botón de posición */
+#btnPrev {
+  left: 10px;
+}
+
+#btnNext {
+  right: 10px;
+}
+
+/* Ajustamos el responsive si quieres (opcional) */
+@media (max-width: 768px) {
+  .card {
+    min-width: 250px;
+  }
+}
+
+/* Estilo para a seção "Contato" */
+section#contato {
+  background-color: #000000; /* Cor de fundo escura */
+  height: 1200px; /* Altura de 900px */
+  display: flex; /* Usar Flexbox para o layout */
+  flex-direction: column; /* Alinha os itens verticalmente */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  position: relative;
+  text-align: center;
+}
+
+section#contato h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 3rem;
+  color: hsl(270, 100%, 50%);
+  margin-top: 70px;
+  text-align: center;
+  position: absolute;
+  top: 20px;
+}
+
+.macbook {
+  width: 150px;
+  height: 96px;
+  position: absolute;
+  left: 49%;
+  top: 28%;
+  margin: -75px 0 0 -48px;
+  perspective: 500px;
+}
+.shadow {
+  position: absolute;
+  width: 60px;
+  height: 0px;
+  left: 40px;
+  top: 160px;
+  transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+  box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
+  animation: shadow infinite 7s ease;
+}
+.inner {
+  z-index: 20;
+  position: absolute;
+  width: 150px;
+  height: 96px;
+  left: 0;
+  top: 0;
+  transform-style: preserve-3d;
+  transform:rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+  animation: rotate infinite 7s ease;
+}
+.screen {
+  width: 150px;
+  height: 96px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 7px;
+  background: #ddd;
+  transform-style: preserve-3d;
+  transform-origin: 50% 93px;
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  animation: lid-screen infinite 7s ease;
+  background-image: linear-gradient(45deg, rgba(0,0,0,0.34) 0%,rgba(0,0,0,0) 100%);
+  background-position: left bottom;
+  background-size: 300px 300px;
+  box-shadow: inset 0 3px 7px rgba(255,255,255,0.5);
+}
+.screen .logo {
+  position: absolute;
+  width: 20px;
+  height: 24px;
+  left: 50%;
+  top: 50%;
+  margin: -12px 0 0 -10px;
+  transform: rotateY(180deg) translateZ(0.1px);
+}
+.screen .face-one {
+  width: 150px;
+  height: 96px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 7px;
+  background: #d3d3d3;
+  transform: translateZ(2px);
+  background-image: linear-gradient(45deg,rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+}
+.screen .face-one .camera {
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
+  background: #000;
+  position: absolute;
+  left: 50%;
+  top: 4px;
+  margin-left: -1.5px;
+}
+.screen .face-one .display {
+  width: 130px;
+  height: 74px;
+  margin: 10px;
+  background: url("https://upload.wikimedia.org/wikipedia/en/9/98/MacOS_Monterey_Desktop.png") no-repeat center center #000;
+  background-size: 100% 100%;
+  border-radius: 1px;
+  position: relative;
+  box-shadow: inset 0 0 2px rgba(0,0,0,1);
+}
+.screen .face-one .display .shade {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130px;
+  height: 74px;
+  background: linear-gradient(-135deg, rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 47%,rgba(255,255,255,0) 48%);
+  animation: screen-shade infinite 7s ease;
+  background-size: 300px 200px;
+  background-position: 0px 0px;
+}
+.screen .face-one span {
+  position: absolute;
+  top: 85px;
+  left: 57px;
+  font-size: 6px;
+  color: #666
+}
+
+.body {
+  width: 150px;
+  height: 96px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 7px;
+  background: #cbcbcb;
+  transform-style: preserve-3d;
+  transform-origin: 50% bottom;
+  transform: rotateX(-90deg);
+  animation: lid-body infinite 7s ease;
+  background-image: linear-gradient(45deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+}
+.body .face-one {
+  width: 150px;
+  height: 96px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 7px;
+  transform-style: preserve-3d;
+  background: #dfdfdf;
+  animation: lid-keyboard-area infinite 7s ease;
+  transform: translateZ(-2px);
+  background-image: linear-gradient(30deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+}
+.body .touchpad {
+  width: 40px;
+  height: 31px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 4px;
+  margin: -44px 0 0 -18px;
+  background: #cdcdcd;
+  background-image: linear-gradient(30deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+  box-shadow: inset 0 0 3px #888;
+}
+.body .keyboard {
+width: 130px;
+height: 45px;
+position: absolute;
+left: 7px;
+top: 41px;
+border-radius: 4px;
+transform-style: preserve-3d;
+background: #cdcdcd;
+background-image: linear-gradient(30deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+box-shadow: inset 0 0 3px #777;
+padding: 0 0 0 2px;
+}
+.keyboard .key {
+  width: 6px;
+  height: 6px;
+  background: #444;
+  float: left;
+  margin: 1px;
+  transform: translateZ(-2px);
+  border-radius: 2px;
+  box-shadow: 0 -2px 0 #222;
+  animation: keys infinite 7s ease;
+}
+.key.space {
+  width: 45px;
+}
+.key.f {
+  height: 3px;
+}
+.body .pad {
+  width: 5px;
+  height: 5px;
+  background: #333;
+  border-radius: 100%;
+  position: absolute;
+}
+.pad.one {
+  left: 20px;
+  top: 20px;
+}
+.pad.two {
+  right: 20px;
+  top: 20px;
+}
+.pad.three {
+  right: 20px;
+  bottom: 20px;
+}
+.pad.four {
+  left: 20px;
+  bottom: 20px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+  }
+  5% {
+    transform: rotateX(-20deg) rotateY(-20deg) rotateZ(0deg);
+  }
+  20% {
+    transform: rotateX(30deg) rotateY(200deg) rotateZ(0deg);
+  }
+  25% {
+    transform: rotateX(-60deg) rotateY(150deg) rotateZ(0deg);
+  }
+  60% {
+    transform: rotateX(-20deg) rotateY(130deg) rotateZ(0deg);
+  }
+  65% {
+    transform: rotateX(-20deg) rotateY(120deg) rotateZ(0deg);
+  }
+  80% {
+    transform: rotateX(-20deg) rotateY(375deg) rotateZ(0deg);
+  }
+  85% {
+    transform: rotateX(-20deg) rotateY(357deg) rotateZ(0deg);
+  }
+  87% {
+    transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+  }
+}
+
+@keyframes lid-screen {
+  0% {
+    transform: rotateX(0deg);
+    background-position: left bottom;
+  }
+  5% {
+    transform: rotateX(50deg);
+    background-position: left bottom;
+  }
+  20% {
+    transform: rotateX(-90deg);
+    background-position: -150px top;
+  }
+  25% {
+    transform: rotateX(15deg);
+    background-position: left bottom;
+  }
+  30% {
+    transform: rotateX(-5deg);
+    background-position: right top;
+  }
+  38% {
+    transform: rotateX(5deg);
+    background-position: right top;
+  }
+  48% {
+    transform: rotateX(0deg);
+    background-position: right top;
+  }
+  90% {
+    transform: rotateX(0deg);
+    background-position: right top;
+  }
+  100% {
+    transform: rotateX(0deg);
+    background-position: right center;
+  }
+}
+
+@keyframes lid-body {
+  0% {
+    transform: rotateX(-90deg);
+    
+  }
+  50% {
+    transform: rotateX(-90deg);
+    
+  }
+  100% {
+    transform: rotateX(-90deg);
+    
+  }
+}
+
+@keyframes lid-keyboard-area {
+  0% {
+     background-color: #dfdfdf;
+  }
+  50% {
+    background-color: #bbb;
+  }
+  100% {
+    background-color: #dfdfdf;
+  }
+}
+@keyframes screen-shade {
+  0% {
+    background-position: -20px 0px;
+  }
+  5% {
+    background-position: -40px 0px;
+  }
+  20% {
+    background-position: 200px 0;
+  }
+  50% {
+    background-position: -200px 0;
+  }
+  80% {
+    background-position: 0px 0px;
+  }
+  85% {
+    background-position: -30px 0;
+  }
+  90% {
+    background-position: -20px 0;
+  }
+  100% {
+    background-position: -20px 0px;
+  }
+}
+@keyframes keys {
+  0% {
+    box-shadow: 0 -2px 0 #222;
+  }
+  5% {
+    box-shadow: 1 -1px 0 #222;
+  }
+  20% {
+    box-shadow: -1px 1px 0 #222;
+  }
+  25% {
+    box-shadow: -1px 1px 0 #222;
+  }
+  60% {
+    box-shadow: -1px 1px 0 #222;
+  }
+  80% {
+    box-shadow: 0 -2px 0 #222;
+  }
+  85% {
+    box-shadow: 0 -2px 0 #222;
+  }
+  87% {
+    box-shadow: 0 -2px 0 #222;
+  }
+  100% {
+    box-shadow: 0 -2px 0 #222;
+  }
+}
+@keyframes shadow {
+  0% {
+    transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+    box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
+  }
+  5% {
+    transform: rotateX(80deg) rotateY(10deg) rotateZ(0deg);
+    box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
+  }
+  20% {
+    transform: rotateX(30deg) rotateY(-20deg) rotateZ(-20deg);
+    box-shadow: 0 0 50px 30px rgba(0,0,0,0.3);
+  }
+  25% {
+    transform: rotateX(80deg) rotateY(-20deg) rotateZ(50deg);
+    box-shadow: 0 0 35px 15px rgba(0,0,0,0.1);
+  }
+  60% {
+    transform: rotateX(80deg) rotateY(0deg) rotateZ(-50deg) translateX(30px);
+    box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
+  }
+  100% {
+    box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
+  }
+}
+.links {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+.links a {
+  color : #555;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.meucontato {
+  display: flex; /* Usar Flexbox para organizar os itens dentro */
+  flex-direction: column; /* Organiza as linhas verticalmente */
+  justify-content: center; /* Centraliza os itens dentro do container */
+  align-items: center; /* Centraliza os itens */
+  gap: 20px; /* Espaçamento entre as linhas (WhatsApp e E-mail) */
+}
+
+.whatsapp-contact, .email-contact {
+  display: flex; /* Flexbox para o conjunto de ícone + texto */
+  justify-content: center; /* Centraliza os itens dentro da linha */
+  align-items: center; /* Alinha os itens na vertical */
+}
+
+.whatsapp-link img, .email-link img {
+  width: 50px; /* Tamanho do ícone */
+  height: 50px;
+  transition: transform 0.3s; /* Animação no hover */
+}
+
+.whatsapp-link img:hover, .email-link img:hover {
+  transform: scale(1.2); /* Aumenta o tamanho ao passar o mouse */
+}
+
+section#contato p {
+  color: #fff; /* Cor do texto */
+  font-size: 24px; /* Tamanho do texto */
+  line-height: 1.5; /* Espaçamento entre as linhas */
+  text-align: center; /* Centraliza o texto */
+  margin-top: 10px; /* Distância entre o ícone e o texto */
+  padding-bottom: 10px;
+}
+
+/* Estilo para o rodapé */
+footer {
+  background-color: #000000; /* Cor de fundo preta */
+  height: 400px;
+  color: hsl(0, 0%, 100%); /* Cor do texto branca */
+  padding: 10px;
+  position: relative;
+  width: 100%;
+  font-size: 14px;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75%;
+  height: 1px;
+  background-color: white;
+}
+
+.footer-left {
+  position: absolute;
+  top: 50px;
+  left: 13%; 
+}
+
+.footer-left h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.footer-left p {
+  margin: 10px 0 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+  font-size: 30px;
+  font-weight: 100;
+}
+
+footer h2 {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+  font-size: 30px;
+  font-weight: 100;
+}
+
+.links-sociais {
+
+  position: absolute; /* Permite o controle da posição */
+  bottom: 300px; /* Define a distância do rodapé */
+  right: 300px; /* Define a distância da borda direita */
+}
+
+.links-sociais ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.links-sociais ul li {
+  position: relative; /* Se necessário, permite ajustes adicionais */
+}
